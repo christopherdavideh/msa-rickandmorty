@@ -1,0 +1,7 @@
+spring:
+  name: msa-rickandmorty
+
+api:
+  base-url: https://rickandmortyapi.com/api/
+  end-points:
+    character: character

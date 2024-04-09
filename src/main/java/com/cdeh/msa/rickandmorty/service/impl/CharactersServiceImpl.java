@@ -3,6 +3,7 @@ package com.cdeh.msa.rickandmorty.service.impl;
 import com.cdeh.msa.rickandmorty.repository.ICharactersRepository;
 import com.cdeh.msa.rickandmorty.service.ICharactersService;
 import com.cdeh.msa.rickandmorty.service.dto.Character;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class CharactersServiceImpl implements ICharactersService {
             return characterRepository.getCharacter();
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return null;
+            throw new RuntimeException("Ha occurido un error en la consulta");
         }
     }
 }
