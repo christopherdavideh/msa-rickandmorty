@@ -4,4 +4,4 @@ spring:
 api:
   base-url: https://rickandmortyapi.com/api/
   end-points:
-    character: character
+    character: character/

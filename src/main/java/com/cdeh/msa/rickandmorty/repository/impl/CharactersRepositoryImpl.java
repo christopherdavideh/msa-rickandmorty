@@ -35,4 +35,13 @@ public class CharactersRepositoryImpl implements ICharactersRepository {
 
         return Objects.requireNonNull(responseCharacter.getBody()).getResults();
     }
+
+    @Override
+    public Character getSingleCharacter(String id) throws JsonProcessingException {
+        ResponseEntity<Character> responseCharacter = restTemplate.getForEntity(
+                baseUl.concat(characterEndpoint).concat(id),
+                Character.class);
+
+        return Objects.requireNonNull(responseCharacter.getBody());
+    }
 }

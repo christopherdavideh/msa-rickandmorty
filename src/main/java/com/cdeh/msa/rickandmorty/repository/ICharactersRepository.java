@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface ICharactersRepository {
     public List<Character> getCharacter() throws JsonProcessingException;
+
+    public Character getSingleCharacter(String id) throws JsonProcessingException;
 }

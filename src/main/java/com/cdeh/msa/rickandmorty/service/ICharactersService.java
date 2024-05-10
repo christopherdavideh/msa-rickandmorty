@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ICharactersService {
     public List<Character> listCharacters();
+
+    public Character singleCharacter(String id);
 }
