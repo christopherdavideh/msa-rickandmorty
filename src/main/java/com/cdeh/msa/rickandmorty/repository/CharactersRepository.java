@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.List;
 
 
-public interface ICharactersRepository {
+public interface CharactersRepository {
     public List<Character> getCharacter() throws JsonProcessingException;
 
     public Character getSingleCharacter(String id) throws JsonProcessingException;

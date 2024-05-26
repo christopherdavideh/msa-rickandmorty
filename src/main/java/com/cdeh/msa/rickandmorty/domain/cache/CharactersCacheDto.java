@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.TimeToLive;
 
+import java.util.List;
 
 @Getter
 @Setter
@@ -13,11 +14,11 @@ import org.springframework.data.redis.core.TimeToLive;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@RedisHash("character")
-public class CharacterCacheDto {
+@RedisHash("characters")
+public class CharactersCacheDto {
     @Id
     String id;
-    Character character;
+    List<Character> characters;
     @TimeToLive
     Long ttl;
 
