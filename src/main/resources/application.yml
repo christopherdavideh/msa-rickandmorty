@@ -1,5 +1,10 @@
 spring:
   name: msa-rickandmorty
+  data:
+    redis:
+      host: localhost # Dirección IP o nombre de host de tu servidor Redis
+      port: 6380
+      password:
 
 api:
   base-url: https://rickandmortyapi.com/api/

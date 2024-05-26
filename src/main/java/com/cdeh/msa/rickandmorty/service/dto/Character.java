@@ -20,7 +20,6 @@ public class Character {
     public Origin origin;
     public Location location;
     public String image;
-    public ArrayList<String> episode;
     public String url;
     public Date created;
 }
