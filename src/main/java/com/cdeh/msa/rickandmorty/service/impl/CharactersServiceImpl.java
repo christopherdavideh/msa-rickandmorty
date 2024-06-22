@@ -64,8 +64,17 @@ public class CharactersServiceImpl implements ICharactersService {
         try {
             loggerUtil.info(EventLog.builder().eventType("REQUEST").build());
 
+            Optional<CharactersCacheDto> characters = cacheRepository.findById(KEY_CACHE);
+
             Optional<CharacterCacheDto> characterRedis = characterCacheRepository.findById(KEY_CACHE_CHARACTER + id);
             Character character;
+
+            if(characters.isPresent()) {
+                character = characters.get().getCharacters().get(Integer.parseInt(id)-1);
+                loggerUtil.info(EventLog.builder().eventType("RESPONSE-REDIS-LIST").data(character).build());
+                characterCacheRepository.save(CharacterCacheDto.builder().character(character).id(KEY_CACHE_CHARACTER + id).ttl(60L).build());
+                return character;
+            }
 
             if(characterRedis.isPresent()) {
                 character = characterRedis.get().getCharacter();
